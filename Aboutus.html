@@ -114,27 +114,74 @@
         <a href="files.html">கோப்புகள்</a>
     </nav>
 
-    <div class="main-content">
-        <article class="content-card">
-            <h2>எமது வரலாறு</h2>
-            <p>
-                தமிழ்ச்சோலைத் தலைமைப் பணியகம் பிரான்சில் பல ஆண்டுகளாக தமிழ் மொழி மற்றும் கலைகளை கற்பிக்கும் பணியைச் செய்து வருகிறது. 
-                புலம்பெயர்ந்து வாழும் தமிழ்ச் சிறார்களுக்குத் தமிழ் மொழியை ஒரு பாடமாக மட்டுமல்லாமல், 
-                அவர்களின் பண்பாட்டு அடையாளமாகவும் கொண்டு செல்வதே எமது நோக்கம்.
-            </p>
-
-            <h2>எமது குறிக்கோள்</h2>
-            <ul>
-                <li>தமிழ் மொழியைச் சரியான உச்சரிப்புடன் கற்பித்தல்.</li>
-                <li>பரதநாட்டியம், சங்கீதம் மற்றும் மிருதங்கம் போன்ற கலைகளை வளர்த்தல்.</li>
-                <li>தமிழ் கலாச்சார விழாக்களின் மூலம் மாணவர்களின் திறமைகளை வெளிக்கொணர்தல்.</li>
-            </ul>
-
-            <div class="mission-box">
-                <strong>குறிப்பு:</strong> பிரான்சு நாடு முழுவதும் பல கிளைகளுடன் தமிழ்ச்சோலை சிறப்பாக இயங்கி வருகிறது.
-            </div>
-        </article>
+   <div class="about-container">
+    <div class="about-image">
+        <img src="images/sunset.jpg" alt="Sunset">
     </div>
+
+    <div class="about-text">
+        <p>
+            தமிழர் கல்வி மேம்பாட்டுப் பேரவை பிரான்சில் 2004 இல் தோற்றுவிக்கப்பட்டது. 
+            எமது ஈழத்தாயகத்தில் பல்வேறு நெருக்கடிகளுக்கு ஆளாகி அங்கு வாழமுடியாத 
+            சூழ்நிலையில் தமிழ் மக்கள் புலம்பெயர்ந்து உலகின் பல நாடுகளில் வாழ்ந்து வருகின்றனர். 
+            புலம்பெயர்ந்து வாழும் சூழலில் தமிழ்த் தலைமுறையினரின் வாழ்வியல் முறை 
+            சிதைந்துவிடாமல் அவர்கள் தம் இன அடையாளத்தைக் காக்கும் பொருட்டும் 
+            உலகம் முழுவதும் சிதறிக் கிடக்கின்ற எமது புலம் பெயர் தமிழ் இனத்தை மொழி மூலம் 
+            ஒரு குடையின் கீழ் ஒன்றிணைக்க முடியும் என்கின்ற நல்லெண்ணத்தோடும் 
+            நிறுவப்பட்டதே தமிழர் கல்வி மேம்பாட்டுப் பேரவை. 
+            மொழி என்பது வெறுமனே தொடர்பாடற் கருவி மட்டுமல்ல எமது இனத்தின் அடையாளம், 
+            கலை இலக்கிய, பண்பாட்டு விழுமியம். மொழி இன்றேல் இனமில்லை என்பதை அறிந்து 
+            புலம்பெயர்ந்து வாழும் எம் தமிழ்த்தலைமுறையினர் தாய் மொழியறியாமல் 
+            வீழ்ந்து விடக்கூடாது என்ற உயரிய நோக்குடன் 14 நாடுகளை ஒன்றாக இணைத்துப் 
+            பயணிக்கத் தொடங்கியதுதான் தமிழர் கல்வி மேம்பாட்டுப் பேரவை.
+        </p>
+    </div>
+</div>
+
+<style>
+    /* Structure Flexbox pour mettre l'image et le texte côte à côte */
+    .about-container {
+        display: flex;
+        background-color: #e9f5e9; /* Fond vert très clair comme sur l'image */
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 20px 0;
+        align-items: stretch;
+    }
+
+    /* Style de l'image */
+    .about-image {
+        flex: 1; /* Prend 1 part de l'espace */
+        min-width: 300px;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* L'image remplit tout l'espace sans se déformer */
+        display: block;
+    }
+
+    /* Style du texte */
+    .about-text {
+        flex: 2; /* Le texte prend plus de place (2 parts) */
+        padding: 30px;
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #1a1a1a;
+        text-align: justify; /* Pour un aspect propre comme sur l'image */
+    }
+
+    /* Adaptation pour les téléphones */
+    @media (max-width: 768px) {
+        .about-container {
+            flex-direction: column; /* L'image passe au-dessus du texte sur mobile */
+        }
+        .about-image {
+            height: 250px;
+        }
+    }
+</style>
 
     <footer>
         <p>© 2026 தமிழ் சோலை - பிரான்சு</p>
