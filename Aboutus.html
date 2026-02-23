@@ -114,70 +114,82 @@
         <a href="files.html">கோப்புகள்</a>
     </nav>
 
-   <div class="about-container">
-    <div class="about-image">
-        <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/sunrise-compressed.jpg" alt="Sunset">
-    </div>
+  <div class="main-box">
+    <div class="content-wrapper">
+        <div class="image-section">
+            <img src="images/votre-image.jpg" alt="Description">
+        </div>
 
-    <div class="about-text">
-        <p>
-            தமிழர் கல்வி மேம்பாட்டுப் பேரவை பிரான்சில் 2004 இல் தோற்றுவிக்கப்பட்டது. 
-            எமது ஈழத்தாயகத்தில் பல்வேறு நெருக்கடிகளுக்கு ஆளாகி அங்கு வாழமுடியாத 
-            சூழ்நிலையில் தமிழ் மக்கள் புலம்பெயர்ந்து உலகின் பல நாடுகளில் வாழ்ந்து வருகின்றனர். 
-            புலம்பெயர்ந்து வாழும் சூழலில் தமிழ்த் தலைமுறையினரின் வாழ்வியல் முறை 
-            சிதைந்துவிடாமல் அவர்கள் தம் இன அடையாளத்தைக் காக்கும் பொருட்டும் 
-            உலகம் முழுவதும் சிதறிக் கிடக்கின்ற எமது புலம் பெயர் தமிழ் இனத்தை மொழி மூலம் 
-            ஒரு குடையின் கீழ் ஒன்றிணைக்க முடியும் என்கின்ற நல்லெண்ணத்தோடும் 
-            நிறுவப்பட்டதே தமிழர் கல்வி மேம்பாட்டுப் பேரவை. 
-            மொழி என்பது வெறுமனே தொடர்பாடற் கருவி மட்டுமல்ல எமது இனத்தின் அடையாளம், 
-            கலை இலக்கிய, பண்பாட்டு விழுமியம். மொழி இன்றேல் இனமில்லை என்பதை அறிந்து 
-            புலம்பெயர்ந்து வாழும் எம் தமிழ்த்தலைமுறையினர் தாய் மொழியறியாமல் 
-            வீழ்ந்து விடக்கூடாது என்ற உயரிய நோக்குடன் 14 நாடுகளை ஒன்றாக இணைத்துப் 
-            பயணிக்கத் தொடங்கியதுதான் தமிழர் கல்வி மேம்பாட்டுப் பேரவை.
-        </p>
+        <div class="text-section">
+            <p>
+                தமிழர் கல்வி மேம்பாட்டுப் பேரவை பிரான்சில் 2004 இல் தோற்றுவிக்கப்பட்டது. 
+                எமது ஈழத்தாயகத்தில் பல்வேறு நெருக்கடிகளுக்கு ஆளாகி அங்கு வாழமுடியாத 
+                சூழ்நிலையில் தமிழ் மக்கள் புலம்பெயர்ந்து உலகின் பல நாடுகளில் வாழ்ந்து வருகின்றனர். 
+                புலம்பெயர்ந்து வாழும் சூழலில் தமிழ்த் தலைமுறையினரின் வாழ்வியல் முறை 
+                சிதைந்துவிடாமல் அவர்கள் தம் இன அடையாளத்தைக் காக்கும் பொருட்டும் 
+                உலகம் முழுவதும் சிதறிக் கிடக்கின்ற எமது புலம் பெயர் தமிழ் இனத்தை மொழி மூலம் 
+                ஒரு குடையின் கீழ் ஒன்றிணைக்க முடியும் என்கின்ற நல்லெண்ணத்தோடும் 
+                நிறுவப்பட்டதே தமிழர் கல்வி மேம்பாட்டுப் பேரவை. 
+                மொழி என்பது வெறுமனே தொடர்பாடற் கருவி மட்டுமல்ல எமது இனத்தின் அடையாளம், 
+                கலை இலக்கிய, பண்பாட்டு விழுமியம். மொழி இன்றேல் இனமில்லை என்பதை அறிந்து 
+                புலம்பெயர்ந்து வாழும் எம் தமிழ்த்தலைமுறையினர் தாய் மொழியறியாமல் 
+                வீழ்ந்து விடக்கூடாது என்ற உயரிய நோக்குடன் 14 நாடுகளை ஒன்றாக இணைத்துப் 
+                பயணிக்கத் தொடங்கியதுதான் தமிழர் கல்வி மேம்பாட்டுப் பேரவை.
+            </p>
+        </div>
     </div>
 </div>
 
 <style>
-    /* Structure Flexbox pour mettre l'image et le texte côte à côte */
-    .about-container {
-        display: flex;
-        background-color: #e9f5e9; /* Fond vert très clair comme sur l'image */
-        border-radius: 5px;
-        overflow: hidden;
-        margin: 20px 0;
-        align-items: stretch;
+    /* Le "Carré" principal (Conteneur) */
+    .main-box {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 10px;
+        background-color: white;
+        border: 1px solid #ddd; /* Bordure fine */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Ombre pour l'effet de relief */
+        border-radius: 8px; /* Coins légèrement arrondis */
     }
 
-    /* Style de l'image */
-    .about-image {
-        flex: 1; /* Prend 1 part de l'espace */
+    /* Organisation interne */
+    .content-wrapper {
+        display: flex;
+        flex-wrap: wrap; /* Permet de passer l'un sous l'autre sur mobile */
+        background-color: #e9f5e9; /* Fond vert clair comme l'image */
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    /* Style de la partie image */
+    .image-section {
+        flex: 1;
         min-width: 300px;
     }
 
-    .about-image img {
+    .image-section img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* L'image remplit tout l'espace sans se déformer */
+        object-fit: cover;
         display: block;
     }
 
-    /* Style du texte */
-    .about-text {
-        flex: 2; /* Le texte prend plus de place (2 parts) */
+    /* Style de la partie texte */
+    .text-section {
+        flex: 1.5;
         padding: 30px;
-        font-size: 1.1em;
+        font-size: 1.05em;
         line-height: 1.8;
         color: #1a1a1a;
-        text-align: justify; /* Pour un aspect propre comme sur l'image */
+        text-align: justify; /* Pour un texte bien aligné */
     }
 
-    /* Adaptation pour les téléphones */
+    /* Responsive : sur petit écran, l'image va au dessus */
     @media (max-width: 768px) {
-        .about-container {
-            flex-direction: column; /* L'image passe au-dessus du texte sur mobile */
+        .content-wrapper {
+            flex-direction: column;
         }
-        .about-image {
+        .image-section {
             height: 250px;
         }
     }
