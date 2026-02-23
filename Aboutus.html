@@ -205,46 +205,36 @@ h1, h2, h3 {
 </div>
 
 <style>
-    /* 1. Centrage du bloc sur toute la page */
-    .page-wrapper {
+    /* 1. Zone de contenu principale */
+    .content-area {
+        flex: 1;
         display: flex;
-        flex-direction: column; /* Aligne le mot et le carré verticalement */
-        align-items: center;    /* Centre horizontalement */
-        justify-content: center; /* Centre verticalement */
-        min-height: 100vh;      /* Utilise toute la hauteur de l'écran */
-        padding: 20px;
-        background-color: #f0f0f0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px; /* Réduit pour gagner de l'espace */
     }
 
-    /* 2. Style du mot avant la photo */
-    .top-word {
-        font-family: 'Arima Madurai', cursive; /* Police tamoule stylée */
-        color: #800000;
-        font-size: 2.5em;
-        margin-bottom: 20px; /* Espace entre le mot et le carré */
-        text-align: center;
-    }
-
-    /* 3. Le Carré (Conteneur principal) */
+    /* 2. LE CARRÉ (Taille diminuée ici) */
     .main-box {
-        max-width: 950px;
-        width: 100%;
+        max-width: 800px; /* Taille réduite de 1000px à 800px */
+        width: 95%;      /* Sécurité pour les petits écrans */
         background-color: white;
         border: 1px solid #ddd;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         border-radius: 12px;
         overflow: hidden;
     }
 
-    /* Organisation Interne (Image + Texte) */
     .content-wrapper {
         display: flex;
-        background-color: #e9f5e9; /* Fond vert clair */
+        background-color: #e9f5e9;
     }
 
+    /* 3. Ajustement de l'image pour un petit carré */
     .image-section {
         flex: 1;
-        min-width: 350px;
+        min-width: 280px; /* Largeur de l'image réduite */
     }
 
     .image-section img {
@@ -254,22 +244,22 @@ h1, h2, h3 {
         display: block;
     }
 
+    /* 4. Ajustement du texte */
     .text-section {
-        flex: 1.5;
-        padding: 40px;
-        font-family: 'Noto Sans Tamil', sans-serif;
-        line-height: 1.8;
+        flex: 1.2;
+        padding: 25px; /* Marges intérieures réduites */
+        font-size: 0.95em; /* Texte légèrement plus petit pour tenir dans le carré */
+        line-height: 1.6;
         text-align: justify;
     }
 
-    /* Mobile : l'un sous l'autre */
-    @media (max-width: 768px) {
-        .content-wrapper { flex-direction: column; }
-        .image-section { height: 250px; }
-        .top-word { font-size: 1.8em; }
+    .top-word {
+        font-family: 'Arima Madurai', cursive;
+        color: #800000;
+        font-size: 2em; /* Titre un peu plus petit pour correspondre au carré */
+        margin-bottom: 15px;
     }
 </style>
-
     <footer>
         <p>© 2026 தமிழ் சோலை - பிரான்சு</p>
     </footer>
