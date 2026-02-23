@@ -161,32 +161,80 @@ h1, h2, h3 {
         </div>
     </div>
 </div>
+    
+<div class="page-wrapper">
+    <h2 class="top-word">நோக்கம்</h2>
+  <div class="main-box">
+    <div class="content-wrapper">
+        <div class="image-section">
+            <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/vaagai_maram.jpg" alt="Description">
+        </div>
+
+        <div class="text-section">
+            <p>
+                உலகின் பவ்வேறு நாடுகளில் வாழ்கின்ற இளந் தமிழ்த் தலைமுறையினர் வாழிட நாட்டு மொழியைக் கற்றுக் கொள்வது பேசுவது அவரவர் வாழ்வியலுக்கு இன்றியமையாதது. தமிழ்த் தலைமுறையினரும் அந்தந்த நாட்டு மொழியைக் கற்று வாழிட நாட்டு கல்வியில் கல்விமான்களாக விளங்குவது எம் இனத்தின் தேவைகளில் ஒன்றாகும். அதேவேளை எம் இளந் தலைமுறையினர் தாய்த்தமிழை மறந்து விடாது தன் அடையாளத்துடன் வாழவேண்டும்.
+
+இந்த நிலையில் தமிழ்த் தலைமுறையினருக்கு தாய்த் தமிழைக் கற்பித்தலை முதன்மை நோக்கமாகக் கொண்டு தமிழர் கல்வி மேம்பாட்டுப் பேரவை செயற்படுகின்றது.
+
+தொன்மையான செம்மொழியாகிய எம் தாய்மொழியை எமது இளந்தலைமுறைக்கு ஊட்டுவதன் ஊடாகத் தமிழ்மொழியைக் காத்து வளர்ப்பதையும் கல்விப் பேரவை நோக்கமாகக் கொண்டுள்ளது.
+
+மேலும் தமிழ் இன வரலாறு, கலை, பண்பாடு முதலானவற்றைத் தாய்மொழிக் கல்வி ஊடாக இளைய தலைமுறையினர் அறியச் செய்வதும் தமிழர் கல்வி மேம்பாட்டுப் பேரவையின் நோக்கமாகும்.
+
+வாழிட நாட்டு வரலாற்றையும் பண்பாட்டையும் அறிந்து அந்தந்த நாட்டின் ஒழுங்குகள் சட்டதிட்டங்களை மதித்து அந்த இன மக்களோடு ஒன்றி வாழத்தக்க நிலையை உருவாக்குதல்.
+
+தாய்நாட்டுக்கும் வாழிட நாட்டுக்கும் பயன் தரத்தக்க வளமான குமுகாயத்தை உருவாக்குதல்.
+
+வளர் தமிழ்ப் பாடநூல்களின் தெளிவான விரிவாக்கத்தை உள்ளடக்கிய அறிவை வழங்குதல்.
+
+எம் இனத்தின் மொழி பண்பாட்டு விழுமியங்களை ஒரே தன்மைத்தான சமச்சீர்க் கல்வி மூலம் பரப்புதல்.
+
+இயன்றவரை நற்றமிழில் கற்றல் – கற்பித்தல்.
+            </p>
+        </div>
+    </div>
+</div>
 
 <style>
-    /* Le "Carré" principal (Conteneur) */
-    .main-box {
-        max-width: 1000px;
-        margin: 40px auto;
-        padding: 10px;
-        background-color: white;
-        border: 1px solid #ddd; /* Bordure fine */
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Ombre pour l'effet de relief */
-        border-radius: 8px; /* Coins légèrement arrondis */
+    /* 1. Centrage du bloc sur toute la page */
+    .page-wrapper {
+        display: flex;
+        flex-direction: column; /* Aligne le mot et le carré verticalement */
+        align-items: center;    /* Centre horizontalement */
+        justify-content: center; /* Centre verticalement */
+        min-height: 100vh;      /* Utilise toute la hauteur de l'écran */
+        padding: 20px;
+        background-color: #f0f0f0;
     }
 
-    /* Organisation interne */
-    .content-wrapper {
-        display: flex;
-        flex-wrap: wrap; /* Permet de passer l'un sous l'autre sur mobile */
-        background-color: #e9f5e9; /* Fond vert clair comme l'image */
-        border-radius: 5px;
+    /* 2. Style du mot avant la photo */
+    .top-word {
+        font-family: 'Arima Madurai', cursive; /* Police tamoule stylée */
+        color: #800000;
+        font-size: 2.5em;
+        margin-bottom: 20px; /* Espace entre le mot et le carré */
+        text-align: center;
+    }
+
+    /* 3. Le Carré (Conteneur principal) */
+    .main-box {
+        max-width: 950px;
+        width: 100%;
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        border-radius: 12px;
         overflow: hidden;
     }
 
-    /* Style de la partie image */
+    /* Organisation Interne (Image + Texte) */
+    .content-wrapper {
+        display: flex;
+        background-color: #e9f5e9; /* Fond vert clair */
+    }
+
     .image-section {
         flex: 1;
-        min-width: 300px;
+        min-width: 350px;
     }
 
     .image-section img {
@@ -196,24 +244,19 @@ h1, h2, h3 {
         display: block;
     }
 
-    /* Style de la partie texte */
     .text-section {
         flex: 1.5;
-        padding: 30px;
-        font-size: 1.05em;
+        padding: 40px;
+        font-family: 'Noto Sans Tamil', sans-serif;
         line-height: 1.8;
-        color: #1a1a1a;
-        text-align: justify; /* Pour un texte bien aligné */
+        text-align: justify;
     }
 
-    /* Responsive : sur petit écran, l'image va au dessus */
+    /* Mobile : l'un sous l'autre */
     @media (max-width: 768px) {
-        .content-wrapper {
-            flex-direction: column;
-        }
-        .image-section {
-            height: 250px;
-        }
+        .content-wrapper { flex-direction: column; }
+        .image-section { height: 250px; }
+        .top-word { font-size: 1.8em; }
     }
 </style>
 
