@@ -205,59 +205,73 @@ h1, h2, h3 {
 </div>
 
 <style>
-    /* 1. Zone de contenu principale */
+    /* Zone de centrage */
     .content-area {
         flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px; /* Réduit pour gagner de l'espace */
-    }
-
-    /* 2. LE CARRÉ (Taille diminuée ici) */
-    .main-box {
-        max-width: 800px; /* Taille réduite de 1000px à 800px */
-        width: 95%;      /* Sécurité pour les petits écrans */
-        background-color: white;
-        border: 1px solid #ddd;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-    .content-wrapper {
-        display: flex;
-        background-color: #e9f5e9;
-    }
-
-    /* 3. Ajustement de l'image pour un petit carré */
-    .image-section {
-        flex: 1;
-        min-width: 280px; /* Largeur de l'image réduite */
-    }
-
-    .image-section img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    /* 4. Ajustement du texte */
-    .text-section {
-        flex: 1.2;
-        padding: 25px; /* Marges intérieures réduites */
-        font-size: 0.95em; /* Texte légèrement plus petit pour tenir dans le carré */
-        line-height: 1.6;
-        text-align: justify;
+        padding: 20px;
     }
 
     .top-word {
         font-family: 'Arima Madurai', cursive;
         color: #800000;
-        font-size: 2em; /* Titre un peu plus petit pour correspondre au carré */
+        font-size: 2em;
         margin-bottom: 15px;
+    }
+
+    /* LE CARRÉ PARFAIT */
+    .main-box {
+        width: 600px;  /* Largeur fixe */
+        height: 600px; /* Hauteur identique à la largeur */
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column; /* On empile l'image et le texte verticalement pour garder le carré */
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column; /* Changement ici : vertical pour respecter les dimensions */
+        height: 100%;
+        background-color: #e9f5e9;
+    }
+
+    /* Image : prend exactement la moitié de la hauteur */
+    .image-section {
+        height: 50%; 
+        width: 100%;
+    }
+
+    .image-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* L'image ne sera pas déformée */
+        display: block;
+    }
+
+    /* Texte : prend l'autre moitié de la hauteur */
+    .text-section {
+        height: 50%;
+        padding: 25px;
+        box-sizing: border-box; /* Pour que le padding ne dépasse pas des 600px */
+        overflow-y: auto; /* Ajoute une barre de défilement si le texte est trop long */
+        font-size: 0.95em;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    /* Adaptation Mobile */
+    @media (max-width: 650px) {
+        .main-box {
+            width: 90vw;
+            height: 90vw; /* Reste carré sur mobile selon la largeur de l'écran */
+        }
     }
 </style>
     <footer>
