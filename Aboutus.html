@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>எம்மைப்பற்றி | தமிழ் சோலை</title>
+    <style>
+        :root {
+            --vert-sombre: #158209;
+            --rouge-sombre: #800000;
+            --jaune-or: #ffcc00;
+            --gris-clair: #f4f4f4;
+            --blanc: #ffffff;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--gris-clair);
+            color: #333;
+        }
+
+        /* En-tête */
+        .top-bar {
+            background-color: var(--rouge-sombre);
+            color: var(--blanc);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 6px solid var(--jaune-or);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--jaune-or);
+            color: black;
+        }
+
+        /* Contenu */
+        .main-content {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .content-card {
+            background: var(--blanc);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+
+        h2 {
+            color: var(--vert-sombre);
+            border-bottom: 2px solid var(--jaune-or);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .mission-box {
+            background-color: #fff9e6;
+            border: 1px dashed var(--rouge-sombre);
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-bar">
+        <h1>தமிழ் சோலை</h1>
+        <p>எம்மைப்பற்றி (À Propos de nous)</p>
+    </header>
+
+    <nav>
+        <a href="index.html">முகப்பு</a>
+        <a href="Aboutus.html" class="active">எம்மைப்பற்றி</a>
+        <a href="events.html">நிகழ்வுகள்</a>
+        <a href="activities.html">செயற்பாடுகள்</a>
+        <a href="files.html">கோப்புகள்</a>
+    </nav>
+
+    <div class="main-content">
+        <article class="content-card">
+            <h2>எமது வரலாறு</h2>
+            <p>
+                தமிழ்ச்சோலைத் தலைமைப் பணியகம் பிரான்சில் பல ஆண்டுகளாக தமிழ் மொழி மற்றும் கலைகளை கற்பிக்கும் பணியைச் செய்து வருகிறது. 
+                புலம்பெயர்ந்து வாழும் தமிழ்ச் சிறார்களுக்குத் தமிழ் மொழியை ஒரு பாடமாக மட்டுமல்லாமல், 
+                அவர்களின் பண்பாட்டு அடையாளமாகவும் கொண்டு செல்வதே எமது நோக்கம்.
+            </p>
+
+            <h2>எமது குறிக்கோள்</h2>
+            <ul>
+                <li>தமிழ் மொழியைச் சரியான உச்சரிப்புடன் கற்பித்தல்.</li>
+                <li>பரதநாட்டியம், சங்கீதம் மற்றும் மிருதங்கம் போன்ற கலைகளை வளர்த்தல்.</li>
+                <li>தமிழ் கலாச்சார விழாக்களின் மூலம் மாணவர்களின் திறமைகளை வெளிக்கொணர்தல்.</li>
+            </ul>
+
+            <div class="mission-box">
+                <strong>குறிப்பு:</strong> பிரான்சு நாடு முழுவதும் பல கிளைகளுடன் தமிழ்ச்சோலை சிறப்பாக இயங்கி வருகிறது.
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <p>© 2026 தமிழ் சோலை - பிரான்சு</p>
+    </footer>
+
+</body>
+</html>
