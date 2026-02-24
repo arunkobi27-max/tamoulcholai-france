@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>முகப்பு | தமிழ் சோலை</title>
     <style>
-       :root {
+       /* --- VARIABLES ET RESET --- */
+:root {
     --primary: #800000;    /* Bordeaux */
     --accent: #ffcc00;     /* Or */
-    --secondary: #2b59ff;  /* Bleu */
-    --bg-light: #f8f9fa;   /* Gris très clair */
+    --secondary: #2b59ff;  /* Bleu moderne */
     --text-dark: #2d3436;
+    --text-light: #636e72;
+    --bg-light: #fdfdfd;
     --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -19,69 +27,56 @@ body {
     margin: 0;
     background-color: var(--bg-light);
     color: var(--text-dark);
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
-/* --- HEADER UNIFIÉ --- */
+/* --- HEADER & NAV (Unifié) --- */
 .main-header {
     background: linear-gradient(135deg, var(--primary) 0%, #4a0000 100%);
     color: white;
-    padding: 30px 20px;
+    padding: 35px 20px;
     text-align: center;
     border-bottom: 5px solid var(--accent);
-}
-
-.header-logo {
-    height: 90px;
-    border-radius: 50%;
-    background: white;
-    padding: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    margin-bottom: 10px;
 }
 
 .main-header h1 {
     margin: 0;
     font-family: 'Arima Madurai', cursive;
-    font-size: 2.5em;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-/* --- NAVIGATION --- */
 .main-nav {
-    background: white;
+    background: var(--white);
     display: flex;
     justify-content: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
 }
 
 .main-nav a {
-    color: #333;
-    padding: 15px 20px;
+    color: var(--text-dark);
+    padding: 18px 25px;
     text-decoration: none;
     font-weight: 700;
     transition: 0.3s;
+    border-bottom: 3px solid transparent;
 }
 
 .main-nav a:hover, .main-nav a.active {
     color: var(--primary);
-    background: rgba(128, 0, 0, 0.05);
     border-bottom: 3px solid var(--primary);
+    background: rgba(128, 0, 0, 0.02);
 }
 
-/* --- FOOTER --- */
-footer {
-    background: #1a1a1a;
-    color: #b2bec3;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 50px;
-}
-        .hero {
-    height: 400px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('votre-image.jpg');
+/* --- SECTION HERO (Bannière d'accueil) --- */
+.hero {
+    position: relative;
+    height: 500px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=1500'); /* Image de temple/culture */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -90,18 +85,145 @@ footer {
     align-items: center;
     color: white;
     text-align: center;
+    padding: 0 20px;
 }
 
 .hero h2 {
-    font-size: 3em;
-    margin: 0;
+    font-size: 3.5em;
+    font-family: 'Arima Madurai';
+    margin-bottom: 15px;
+    animation: fadeInUp 1s ease;
 }
 
-.welcome-section {
-    padding: 60px 20px;
+.hero p {
+    font-size: 1.3em;
+    max-width: 700px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1em;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background: #e6b800;
+}
+
+/* --- SECTION BIENVENUE & VALEURS --- */
+.welcome-container {
+    max-width: 1100px;
+    margin: -50px auto 60px; /* Chevauchement sur le hero */
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 2;
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    padding: 20px;
+}
+
+.feature-item i {
+    font-size: 2.5em;
+    color: var(--primary);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.feature-item h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* --- SECTION DERNIÈRES NOUVELLES --- */
+.news-section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-left: 6px solid var(--primary);
+    padding-left: 20px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.news-img {
+    height: 200px;
+    background: #eee;
+}
+
+.news-body {
+    padding: 25px;
+}
+
+.news-body h4 {
+    margin: 0 0 10px 0;
+    color: var(--primary);
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #1a1a1a;
+    color: #b2bec3;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 80px;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero h2 { font-size: 2.2em; }
+    .main-header h1 { font-size: 2em; }
+    .welcome-container { margin-top: 20px; padding: 20px; }
 }
     </style>
 </head>
