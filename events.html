@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>எம்மைப்பற்றி | தமிழ் சோலை</title>
+    <title>நிகழ்வுகள் | தமிழ் சோலை</title>
     <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
-    
     <style>
         :root {
-            --bleu-titre: #2b59ff;
             --rouge-sombre: #800000;
             --jaune-or: #ffcc00;
-            --vert-fond-image: #e9f5e9;
-            --gris-texte: #444;
+            --bleu-titre: #2b59ff;
+            --vert-pale: #e9f5e9;
+            --gris-texte: #333;
         }
 
         body {
@@ -20,43 +19,66 @@
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            line-height: 1.6;
             color: var(--gris-texte);
+            line-height: 1.6;
         }
 
-        /* --- HEADER & NAV --- */
+        /* --- EN-TÊTE --- */
         header {
             background-color: var(--rouge-sombre);
             color: white;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
-            border-bottom: 5px solid var(--jaune-or);
+            border-bottom: 6px solid var(--jaune-or);
         }
 
         header h1 {
             margin: 0;
             font-family: 'Arima Madurai', cursive;
+            font-size: 2.2em;
         }
 
-        /* --- CONTENEUR PRINCIPAL --- */
-        .main-container {
+        /* --- NAVIGATION --- */
+        nav {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--jaune-or);
+            color: black;
+        }
+
+        .container {
             max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* --- SECTION IMAGE ET PRÉSENTATION (Style image_ba5f39) --- */
-        .intro-section {
+        /* --- BLOC PRÉSENTATION (Style image_ba5f39) --- */
+        .intro-box {
             display: flex;
-            background-color: var(--vert-fond-image);
+            background-color: var(--vert-pale);
             border-radius: 4px;
             overflow: hidden;
             margin-bottom: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .intro-image {
-            flex: 0 0 400px; /* Largeur fixe pour l'image carrée */
+            flex: 0 0 400px;
             height: 400px;
         }
 
@@ -72,65 +94,89 @@
             padding: 35px;
             display: flex;
             align-items: center;
-            font-size: 1.05em;
             text-align: justify;
+            font-size: 1.05em;
         }
 
-        /* --- SECTION ARTICLE (Style image_50d1e1) --- */
-        .article-section h2 {
+        /* --- BLOC ARTICLE (Style image_50d1e1 / image_51523c) --- */
+        .article-section {
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+
+        .main-title {
             color: var(--bleu-titre);
             font-size: 2em;
             margin-bottom: 25px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        .sub-section {
-            margin-bottom: 30px;
+            font-family: 'Noto Sans Tamil', sans-serif;
         }
 
         .sub-title {
+            font-size: 1.3em;
             font-weight: bold;
-            font-size: 1.2em;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            margin-top: 30px;
             margin-bottom: 15px;
         }
 
-        .article-content {
+        .content-block {
             padding-left: 5px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        /* Style des listes à puces avec puces colorées */
-        .custom-list {
+        /* Style des listes à puces (image_50d1e1) */
+        .bullet-list {
             list-style: none;
-            padding-left: 10px;
+            padding-left: 15px;
         }
 
-        .custom-list li {
+        .bullet-list li {
             position: relative;
             padding-left: 25px;
             margin-bottom: 12px;
         }
 
-        .custom-list li::before {
+        .bullet-list li::before {
             content: "•";
             color: var(--rouge-sombre);
             font-weight: bold;
-            display: inline-block; 
-            width: 1em;
-            margin-left: -1em;
-            font-size: 1.3em;
-            vertical-align: middle;
+            position: absolute;
+            left: 0;
+            font-size: 1.4em;
+            line-height: 1;
         }
 
-        /* --- MOBILE RESPONSIVE --- */
+        /* Style de la liste numérotée (image_51523c) */
+        .number-list {
+            padding-left: 20px;
+        }
+
+        .number-list li {
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 40px 0;
+        }
+
+        /* --- PIED DE PAGE --- */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+        }
+
+        /* Mobile */
         @media (max-width: 850px) {
-            .intro-section { flex-direction: column; }
+            .intro-box { flex-direction: column; }
             .intro-image { flex: none; width: 100%; height: 250px; }
-            .article-section h2 { font-size: 1.5em; }
+            .main-title { font-size: 1.5em; }
         }
     </style>
 </head>
@@ -140,45 +186,70 @@
         <h1>தமிழ் சோலை</h1>
     </header>
 
-    <div class="main-container">
+    <nav>
+        <a href="index.html">முகப்பு</a>
+        <a href="Aboutus.html" class="active">எம்மைப்பற்றி</a>
+        <a href="events.html">நிகழ்வுகள்</a>
+        <a href="activities.html">செயற்பாடுகள்</a>
+        <a href="files.html">கோப்புகள்</a>
+    </nav>
 
-        <div class="intro-section">
+    <div class="container">
+
+        <div class="intro-box">
             <div class="intro-image">
-                <img src="https://www.tamoulcholai.fr/uploads/sections/sec_1770734669.png" alt="Presentation">
+                <img src="https://www.tamoulcholai.fr/uploads/sections/sec_1770734669.png" alt="Sunset Presentation">
             </div>
             <div class="intro-text">
                 <p>
                     தமிழரின் உலகாந்த அறிவியல் பார்வைக்கு எடுத்துக்காட்டாகத் திகழும் பல்நூறு நூல்களில் முதன்மையானது திருக்குறள். மாந்த வாழ்வியலின் ஒவ்வோரு கூறுகளையும் கட்டமைத்துக்கொள்ள வழிசொல்லும் உன்னத இலக்கியம்.
+                </p>
             </div>
         </div>
 
         <div class="article-section">
-            <h2>திருக்குறள் திறன் போட்டி: நோக்கமும் நிறைவும்</h2>
+            <h2 class="main-title">திருக்குறள் திறன் போட்டி: நோக்கமும் நிறைவும்</h2>
+            
+            <p>தமிழரின் உலகார்ந்த அறிவியல் பார்வைக்கு எடுத்துக்காட்டாகத் திகழும் பல்லூறு நூல்களில் முதன்மையானது திருக்குறள்.</p>
 
-            <div class="sub-section">
-                <div class="sub-title">🌍 உலகப் பொதுமறை</div>
-                <div class="article-content">
-                    இனம், மொழி, மதம், நாடு என எக்கட்டுக்குள்ளும் அடங்கிடாத உலகப் பொதுமறையாய் பலநூறு ஆண்டுகள் கடந்தும் நிலைத்திருக்கும் வியத்தகு புதையலே எம் திருக்குறள்.
-                </div>
+            <div class="sub-title">🌍 உலகப் பொதுமறை</div>
+            <div class="content-block">
+                இனம், மொழி, மதம், நாடு என எக்கட்டுக்குள்ளும் அடங்கிடாத உலகப் பொதுமறையாய் பலநூறு ஆண்டுகள் கடந்தும் நிலைத்திருக்கும் வியத்தகு புதையலே எம் திருக்குறள்.
             </div>
 
-            <div class="sub-section">
-                <div class="sub-title">🎯 போட்டியின் முதன்மை நோக்கங்கள்</div>
-                <div class="article-content">
-                    தமிழ்ச்சோலைத் தலைமைப் பணியகத்தினால் உருவாக்கப்பட்ட இப்போட்டியின் அடிப்படை நோக்கங்கள் பின்வருமாறு:
-                    <ul class="custom-list">
-                        <li><strong>அறமும் அறிவியலும்:</strong> புலம்பெயர் மாணவரிடத்தே தமிழரின் அறத்தையும் அறிவியலையும் கொண்டு செல்லுதல்.</li>
-                        <li><strong>இலக்கியச் செரிவு:</strong> தமிழ் இலக்கியத்தின் ஆழத்தையும், அரசியல் தெளிவையும் இளைய தலைமுறைக்கு உணரவைத்தல்.</li>
-                        <li><strong>பரிணாம வளர்ச்சி:</strong> வெறும் மனனத்துடன் (Memory) சுருக்கிவிடாது, குறள் சார்ந்த அறிவுத்திறனை ஊட்டுதல்.</li>
-                    </ul>
-                </div>
+            <div class="sub-title">🎯 போட்டியின் முதன்மை நோக்கங்கள்</div>
+            <div class="content-block">
+                தமிழ்சோலைத் தலைமைப் பணியகத்தினால் உருவாக்கப்பட்ட இப்போட்டியின் அடிப்படை நோக்கங்கள் பின்வருமாறு:
+                <ul class="bullet-list">
+                    <li><strong>அறமும் அறிவியலும்:</strong> புலம்பெயர் மாணவரிடத்தே தமிழரின் அறத்தையும் அறிவியலையும் கொண்டு செல்லுதல்.</li>
+                    <li><strong>இலக்கியச் செரிவு:</strong> தமிழ் இலக்கியத்தின் ஆழத்தையும், அரசியல் தெளிவையும் இளைய தலைமுறைக்கு உணரவைத்தல்.</li>
+                    <li><strong>பரிணாம வளர்ச்சி:</strong> வெறும் மனனத்துடன் (Memory) சுருக்கிவிடாது, குறள் சார்ந்த அறிவுத்திறனை ஊட்டுதல்.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="article-section">
+            <div class="sub-title">🏆 போட்டி அமைப்பு முறை</div>
+            <div class="content-block">
+                இப்போட்டியானது ஒன்பது அகவைப் பிரிவுகளுடன், மூன்று முக்கிய கட்டங்களாக வடிவமைக்கப்பட்டுள்ளது:
+                <ol class="number-list">
+                    <li>தமிழ்சோலை மட்டம்</li>
+                    <li>திணைக்கள மட்டம்</li>
+                    <li>இறுதிப் போட்டி</li>
+                </ol>
+                <strong>குறிக்கோள்:</strong> போட்டியாளர்களின் மொழித்திறனையும் அறிவியல் தெளிவையும் பெருக்குவதே இதன் இறுதி இலக்காகும்.
+            </div>
+
+            <div class="sub-title">✅ நிறைவுரை: ஒரு உந்துக்கருவி</div>
+            <div class="content-block">
+                இது ஒரு போட்டியாக மட்டுமே நின்றுவிடாது, புலம்பெயர் தமிழ் இளையோருக்கு எம் மொழி மற்றும் இலக்கிய அறிவியல் மீதான நேர்மறையான கண்ணோட்டத்தை உருவாக்குகிறது. எம்மினத்தின் விடுதலை நோக்கி அவர்களை நகர்த்தும் ஓர் உந்துக்கருவியே இத் திருக்குறள் திறன் போட்டியாகும்.
             </div>
         </div>
 
     </div>
 
-    <footer style="background: #222; color: white; text-align: center; padding: 20px; margin-top: 40px;">
-        <p>© 2026 தமிழ் சோலை - பிரான்சு</p>
+    <footer>
+        <p>© 2026 தமிழ் சோலை - பிரான்சு | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை</p>
     </footer>
 
 </body>
