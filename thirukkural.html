@@ -7,169 +7,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Noto+Sans+Tamil:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --primary: #800000;
-            --accent: #ffcc00;
-            --secondary: #2b59ff;
-            --bg-light: #f8f9fa;
-            --white: #ffffff;
-        }
+      /* --- BASE COMMUNE --- */
+:root {
+    --primary: #800000;
+    --accent: #ffcc00;
+    --secondary: #2b59ff;
+    --bg-light: #f0f2f5;
+}
 
-        body {
-            font-family: 'Noto Sans Tamil', sans-serif;
-            margin: 0;
-            background-color: var(--bg-light);
-            color: #2d3436;
-            line-height: 1.6;
-        }
+body {
+    font-family: 'Noto Sans Tamil', sans-serif;
+    margin: 0;
+    background-color: var(--bg-light);
+}
 
-        /* --- MODERN HEADER --- */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, #4a0000 100%);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--accent);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+/* --- STYLE GRILLE DE DOCUMENTS --- */
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
 
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.page-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
-        header img {
-            height: 80px;
-            border-radius: 50%;
-            background: white;
-            padding: 5px;
-        }
+.page-intro h2 {
+    color: var(--primary);
+    font-size: 2.5em;
+    font-family: 'Arima Madurai';
+}
 
-        /* --- CONTAINER --- */
-        .container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
 
-        .page-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+.doc-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+    border-top: 5px solid transparent;
+}
 
-        .page-title {
-            color: var(--secondary);
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-family: 'Arima Madurai', cursive;
-        }
+.doc-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--secondary);
+}
 
-        .description {
-            max-width: 700px;
-            margin: 0 auto;
-            color: #636e72;
-            font-size: 1.1em;
-        }
+.doc-icon {
+    width: 70px;
+    height: 70px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 2em;
+    color: var(--secondary);
+}
 
-        /* --- DOCUMENTS GRID --- */
-        .doc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-        }
+.doc-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #333;
+}
 
-        .doc-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border-bottom: 4px solid transparent;
-        }
+.btn-download {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(43, 89, 255, 0.3);
+}
 
-        .doc-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border-bottom: 4px solid var(--accent);
-        }
+.btn-download:hover {
+    background: #1a3ebb;
+    box-shadow: 0 6px 20px rgba(43, 89, 255, 0.4);
+}
 
-        .doc-icon {
-            background: #f0f4ff;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            font-size: 2em;
-        }
-
-        .doc-info {
-            flex: 1;
-        }
-
-        .doc-name {
-            display: block;
-            font-weight: 700;
-            font-size: 1.1em;
-            color: #2d3436;
-            margin-bottom: 10px;
-        }
-
-        .doc-btn {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            text-decoration: none;
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.85em;
-            font-weight: 700;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(43, 89, 255, 0.2);
-        }
-
-        .doc-btn:hover {
-            background: #1a3ebb;
-            transform: scale(1.05);
-        }
-
-        /* --- FOOTER --- */
-        .back-link {
-            display: inline-block;
-            margin-top: 50px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 700;
-            padding: 10px 20px;
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .back-link:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        footer {
-            background: #1a1a1a;
-            color: #b2bec3;
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-        }
-
-        @media (max-width: 600px) {
-            .doc-grid { grid-template-columns: 1fr; }
-            .page-title { font-size: 1.8em; }
-        }
+/* Footer simple */
+footer {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 100px;
+}
     </style>
 </head>
 <body>
