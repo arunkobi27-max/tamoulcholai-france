@@ -294,6 +294,39 @@
         border-left: 8px solid var(--bleu-titre) !important;
         background-color: #f0f4ff !important; /* Un bleu très léger pour distinguer */
     }
+
+    /* Taille réduite pour l'image de l'événement */
+.event-image {
+    flex: 0 0 200px; /* Largeur fixe réduite */
+    height: 200px;    /* Hauteur fixe pour garder le carré */
+    background-color: #ddd; /* Couleur de secours si l'image ne charge pas */
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre l'image sans la déformer */
+    display: block;
+}
+
+/* Ajustement de la carte pour qu'elle soit moins haute */
+.event-card {
+    display: flex;
+    background-color: var(--vert-pale);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    max-height: 200px; /* Force la carte à ne pas dépasser l'image */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.event-details {
+    flex: 1;
+    padding: 20px; /* Réduit un peu l'espace intérieur */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 </style>
 
     <footer>
