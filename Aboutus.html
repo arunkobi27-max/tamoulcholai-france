@@ -36,20 +36,12 @@
         }
 
         header img {
-            height: 100px;
-            border-radius: 50%;
-            background: white;
-            padding: 8px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            margin-bottom: 15px;
+            transition: transform 0.3s ease;
         }
 
-        header h1 {
-            margin: 0;
-            font-family: 'Arima Madurai', cursive;
-            font-size: 2.8em;
+        header img:hover {
+            transform: scale(1.05);
         }
-
         /* --- NAVIGATION --- */
         nav {
             background: var(--glass);
