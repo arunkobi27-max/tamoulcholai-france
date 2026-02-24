@@ -5,86 +5,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>எம்மைப்பற்றி | தமிழ் சோலை</title>
-    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Noto+Sans+Tamil:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --rouge-sombre: #800000;
-            --jaune-or: #ffcc00;
-            --vert-pale: #e9f5e9;
+            --primary: #800000;
+            --accent: #ffcc00;
+            --secondary: #2b59ff;
+            --bg-light: #f8f9fa;
+            --text-dark: #2d3436;
+            --glass: rgba(255, 255, 255, 0.9);
         }
 
         body {
             font-family: 'Noto Sans Tamil', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
         }
 
-        /* --- HEADER & NAVIGATION --- */
+        /* --- MODERN HEADER --- */
         header {
-            background-color: var(--rouge-sombre);
+            background: linear-gradient(135deg, var(--primary) 0%, #4a0000 100%);
             color: white;
-            padding: 25px 20px;
+            padding: 40px 20px;
             text-align: center;
-            border-bottom: 6px solid var(--jaune-or);
+            border-bottom: 4px solid var(--accent);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        header img {
+            height: 100px;
+            border-radius: 50%;
+            background: white;
+            padding: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
         }
 
         header h1 {
             margin: 0;
             font-family: 'Arima Madurai', cursive;
-            font-size: 2.5em;
+            font-size: 2.8em;
         }
 
+        /* --- NAVIGATION --- */
         nav {
-            background-color: #222;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         nav a {
-            color: white;
-            padding: 15px 20px;
+            color: #333;
+            padding: 12px 25px;
             text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
+            font-weight: 700;
+            border-radius: 8px;
+            margin: 0 5px;
+            transition: all 0.3s ease;
         }
 
         nav a:hover, nav a.active {
-            background-color: var(--jaune-or);
-            color: black;
+            background-color: var(--primary);
+            color: white;
         }
 
-        /* --- CONTENU STYLE PHOTO --- */
-        .main-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        .content-box {
-            display: flex;
-            background-color: var(--vert-pale);
+        .container {
             max-width: 1100px;
-            width: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            overflow: hidden;
+            margin: 50px auto;
+            padding: 0 20px;
         }
 
-        /* Image Carrée à gauche */
+        /* --- SECTION TITLES --- */
+        .section-title {
+            color: var(--primary);
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            font-family: 'Arima Madurai', cursive;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* --- MODERN CONTENT BOX --- */
+        .content-box {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+            transition: transform 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: translateY(-5px);
+        }
+
         .image-side {
-            flex: 0 0 400px; /* Taille fixe pour garder le carré */
-            height: 400px;
+            height: 100%;
         }
 
         .image-side img {
@@ -94,44 +131,45 @@
             display: block;
         }
 
-        /* Texte à droite */
         .text-side {
-            flex: 1;
-            padding: 35px;
+            padding: 45px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(to right, #ffffff, #fcfcfc);
         }
 
         .text-side p {
             margin: 0;
-            font-size: 1.05em;
-            line-height: 1.8;
-            color: #222;
+            font-size: 1.1em;
             text-align: justify;
+            color: #444;
         }
 
         /* --- FOOTER --- */
         footer {
-            background-color: #222;
-            color: white;
+            background: #1a1a1a;
+            color: #777;
             text-align: center;
-            padding: 20px 0;
-            font-size: 0.9em;
+            padding: 40px 20px;
+            margin-top: 60px;
         }
 
-        /* Mobile */
-        @media (max-width: 850px) {
-            .content-box { flex-direction: column; }
-            .image-side { flex: none; width: 100%; height: 250px; }
-            header h1 { font-size: 1.8em; }
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .content-box { grid-template-columns: 1fr; }
+            .image-side { height: 250px; }
+            header h1 { font-size: 2em; }
+            .text-side { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
     <header>
+        <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Logo">
         <h1>தமிழ் சோலை</h1>
-        <p>தமிழ் மொழி, கலை மற்றும் பண்பாட்டுத் தளம்</p>
+        <p style="opacity: 0.9; letter-spacing: 1px;">தமிழ் மொழி, கலை மற்றும் பண்பாட்டுத் தளம்</p>
     </header>
 
     <nav>
@@ -141,14 +179,14 @@
         <a href="activities.html">செயற்பாடுகள்</a>
         <a href="files.html">கோப்புகள்</a>
     </nav>
-    <div class="content-area">
-    <h2 class="top-word">தோற்றம்</h2>
+
     <div class="container">
+        
+        <h2 class="section-title">தோற்றம்</h2>
         <div class="content-box">
             <div class="image-side">
-                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/sunrise-compressed.jpg" alt="Sunset">
+                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/sunrise-compressed.jpg" alt="Thootram">
             </div>
-
             <div class="text-side">
                 <p>
                     தமிழர் கல்வி மேம்பாட்டுப் பேரவை பிரான்சில் 2004 இல் தோற்றுவிக்கப்பட்டது. 
@@ -159,43 +197,36 @@
                     உலகம் முழுவதும் சிதறிக் கிடக்கின்ற எமது புலம் பெயர் தமிழ் இனத்தை மொழி மூலம் 
                     ஒரு குடையின் கீழ் ஒன்றிணைக்க முடியும் என்கின்ற நல்லெண்ணத்தோடும் 
                     நிறுவப்பட்டதே தமிழர் கல்வி மேம்பாட்டுப் பேரவை. 
+                    <br><br>
                     மொழி என்பது வெறுமனே தொடர்பாடற் கருவி மட்டுமல்ல எமது இனத்தின் அடையாளம், 
                     கலை இலக்கிய, பண்பாட்டு விழுமியம். மொழி இன்றேல் இனமில்லை என்பதை அறிந்து 
                     புலம்பெயர்ந்து வாழும் எம் தமிழ்த்தலைமுறையினர் தாய் மொழியறியாமல் 
-                    வீழ்ந்து விடக்கூடாது என்ற உயரிய நோக்குடன் 14 நாடுகளை ஒன்றாக.
+                    வீழ்ந்து விடக்கூடாது என்ற உயரிய நோக்குடன் 14 நாடுகளை ஒன்றாக இணைத்து இது செயற்படுகிறது.
                 </p>
             </div>
         </div>
-    </div>
-    <div class="content-area">
-    <h2 class="top-word">நோக்கம்</h2>
-    <div class="container">
+
+        <h2 class="section-title">நோக்கம்</h2>
         <div class="content-box">
             <div class="image-side">
-                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/vaagai_maram.jpg" alt="Sunset">
+                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/vaagai_maram.jpg" alt="Nokkam">
             </div>
-
             <div class="text-side">
-                <p> உலகின் பவ்வேறு நாடுகளில் வாழ்கின்ற இளந் தமிழ்த் தலைமுறையினர் வாழிட நாட்டு மொழியைக் கற்றுக் கொள்வது பேசுவது அவரவர் வாழ்வியலுக்கு இன்றியமையாதது. தமிழ்த் தலைமுறையினரும் அந்தந்த நாட்டு மொழியைக் கற்று வாழிட நாட்டு கல்வியில் கல்விமான்களாக விளங்குவது எம் இனத்தின் தேவைகளில் ஒன்றாகும். அதேவேளை எம் இளந் தலைமுறையினர் தாய்த்தமிழை மறந்து விடாது தன் அடையாளத்துடன் வாழவேண்டும்.
-
-இந்த நிலையில் தமிழ்த் தலைமுறையினருக்கு தாய்த் தமிழைக் கற்பித்தலை முதன்மை நோக்கமாகக் கொண்டு தமிழர் கல்வி மேம்பாட்டுப் பேரவை செயற்படுகின்றது.
-
-தொன்மையான செம்மொழியாகிய எம் தாய்மொழியை எமது இளந்தலைமுறைக்கு ஊட்டுவதன் ஊடாகத் தமிழ்மொழியைக் காத்து வளர்ப்பதையும் கல்விப் பேரவை நோக்கமாகக் கொண்டுள்ளது.
-
-மேலும் தமிழ் இன வரலாறு, கலை, பண்பாடு முதலானவற்றைத் தாய்மொழிக் கல்வி ஊடாக இளைய தலைமுறையினர் அறியச் செய்வதும் தமிழர் கல்வி மேம்பாட்டுப் பேரவையின் நோக்கமாகும்.
-
-வாழிட நாட்டு வரலாற்றையும் பண்பாட்டையும் அறிந்து அந்தந்த நாட்டின் ஒழுங்குகள் சட்டதிட்டங்களை மதித்து அந்த இன மக்களோடு ஒன்றி வாழத்தக்க நிலையை உருவாக்குதல்.
-
-தாய்நாட்டுக்கும் வாழிட நாட்டுக்கும் பயன் தரத்தக்க வளமான குமுகாயத்தை உருவாக்குதல்.
-
-வளர் தமிழ்ப் பாடநூல்களின் தெளிவான விரிவாக்கத்தை உள்ளடக்கிய அறிவை வழங்குதல்.
-
-எம் இனத்தின் மொழி பண்பாட்டு விழுமியங்களை ஒரே தன்மைத்தான சமச்சீர்க் கல்வி மூலம் பரப்புதல்.
-
-இயன்றவரை நற்றமிழில் கற்றல் – கற்பித்தல்.</p>
+                <p>
+                    உலகின் பல்வேறு நாடுகளில் வாழ்கின்ற இளந் தமிழ்த் தலைமுறையினர் வாழிட நாட்டு மொழியைக் கற்றுக் கொள்வது பேசுவது அவரவர் வாழ்வியலுக்கு இன்றியமையாதது. அதேவேளை எம் இளந் தலைமுறையினர் தாய்த்தமிழை மறந்து விடாது தன் அடையாளத்துடன் வாழவேண்டும்.
+                    <br><br>
+                    தொன்மையான செம்மொழியாகிய எம் தாய்மொழியை எமது இளந்தலைமுறைக்கு ஊட்டுவதன் ஊடாகத் தமிழ்மொழியைக் காத்து வளர்ப்பதையும் கல்விப் பேரவை நோக்கமாகக் கொண்டுள்ளது. மேலும் தமிழ் இன வரலாறு, கலை, பண்பாடு முதலானவற்றைத் தாய்மொழிக் கல்வி ஊடாக இளைய தலைமுறையினர் அறியச் செய்வதும் இதன் முக்கிய இலக்காகும்.
+                    <br><br>
+                    தாய்நாட்டுக்கும் வாழிட நாட்டுக்கும் பயன் தரத்தக்க வளமான குமுகாயத்தை உருவாக்குதல் மற்றும் எம் இனத்தின் மொழி பண்பாட்டு விழுமியங்களை ஒரே தன்மைத்தான சமச்சீர்க் கல்வி மூலம் பரப்புவதே எமது அடிப்படை நோக்கமாகும்.
+                </p>
             </div>
         </div>
+
     </div>
+
+    <footer>
+        <p>© 2026 தமிழ் சோலை - பிரான்சு | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை</p>
+    </footer>
 
 </body>
 </html>
