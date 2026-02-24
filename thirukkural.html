@@ -1,79 +1,113 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="ta">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>திருக்குறள் போட்டிகள் | தமிழ் சோலை</title>
-    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Noto+Sans+Tamil:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --rouge-sombre: #800000;
-            --jaune-or: #ffcc00;
-            --bleu-titre: #2b59ff;
-            --gris-fond: #f4f4f4;
+            --primary: #800000;
+            --accent: #ffcc00;
+            --secondary: #2b59ff;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
         }
 
         body {
             font-family: 'Noto Sans Tamil', sans-serif;
             margin: 0;
-            background-color: var(--gris-fond);
-            color: #333;
-        }
-
-        header {
-            background-color: var(--rouge-sombre);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--jaune-or);
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .page-title {
-            color: var(--bleu-titre);
-            text-align: center;
-            font-size: 2.2em;
-            margin-bottom: 10px;
-        }
-
-        .description {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
+            background-color: var(--bg-light);
+            color: #2d3436;
             line-height: 1.6;
         }
 
-        /* --- GRILLE DE DOCUMENTS --- */
+        /* --- MODERN HEADER --- */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #4a0000 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        header img {
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+        }
+
+        /* --- CONTAINER --- */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title {
+            color: var(--secondary);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-family: 'Arima Madurai', cursive;
+        }
+
+        .description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #636e72;
+            font-size: 1.1em;
+        }
+
+        /* --- DOCUMENTS GRID --- */
         .doc-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
         }
 
         .doc-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            border-left: 5px solid var(--rouge-sombre);
+            gap: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
         }
 
         .doc-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--accent);
         }
 
         .doc-icon {
-            font-size: 2.5em;
+            background: #f0f4ff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 2em;
         }
 
         .doc-info {
@@ -82,132 +116,163 @@
 
         .doc-name {
             display: block;
-            font-weight: bold;
-            color: #222;
-            margin-bottom: 5px;
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #2d3436;
+            margin-bottom: 10px;
         }
 
         .doc-btn {
-            background: var(--bleu-titre);
+            display: inline-block;
+            background: var(--secondary);
             color: white;
             text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 4px;
+            padding: 8px 18px;
+            border-radius: 50px;
             font-size: 0.85em;
-            font-weight: bold;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(43, 89, 255, 0.2);
         }
 
-        .doc-btn:hover { background: #1a3ebb; }
+        .doc-btn:hover {
+            background: #1a3ebb;
+            transform: scale(1.05);
+        }
+
+        /* --- FOOTER --- */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 20px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            background: var(--primary);
+            color: white;
+        }
 
         footer {
-            background: #222;
-            color: white;
+            background: #1a1a1a;
+            color: #b2bec3;
             text-align: center;
-            padding: 20px;
-            margin-top: 50px;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            .doc-grid { grid-template-columns: 1fr; }
+            .page-title { font-size: 1.8em; }
         }
     </style>
 </head>
 <body>
 
-        <header class="top-bar">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Logo" style="height: 100px; width: auto; border-radius: 50%; background: white; padding: 5px;">
-            
+    <header>
+        <div class="header-content">
+            <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Logo">
             <div style="text-align: left;">
-                <h1 style="margin: 0;">தமிழ் சோலை</h1>
-                <p style="margin: 0;">தமிழ் மொழி, கலை மற்றும் பண்பாட்டுத் தளம்</p>
+                <h1 style="margin: 0; font-family: 'Arima Madurai';">தமிழ் சோலை</h1>
+                <p style="margin: 0; opacity: 0.9;">தமிழ் மொழி, கலை மற்றும் பண்பாட்டுத் தளம்</p>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <h2 class="page-title">திருக்குறள் போட்டி ஆவணங்கள்</h2>
-        <p class="description">போட்டி தொடர்பான அனைத்து விதிமுறைகள், பாடத்திட்டங்கள் மற்றும் விண்ணப்பப் படிவங்களை இங்கே பதிவிறக்கம் செய்து கொள்ளலாம்.</p>
+        <div class="page-header">
+            <h2 class="page-title">திருக்குறள் போட்டி ஆவணங்கள்</h2>
+            <p class="description">அனைத்து அகவைப் பிரிவுகளுக்கான பாடத்திட்டங்கள் மற்றும் ஆவணங்களை இங்கே பதிவிறக்கம் செய்து கொள்ளலாம்.</p>
+        </div>
 
         <div class="doc-grid">
             
             <div class="doc-card">
-                <div class="doc-icon">📚</div>
+                <div class="doc-icon">👶</div>
                 <div class="doc-info">
                     <span class="doc-name">மழலையர் பிரிவு</span>
-                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735333_1-%E0%AE%AE%E0%AE%B4%E0%AE%B2%E0%AF%88%E0%AE%AF%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம்</a>
+                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735333_1-%E0%AE%AE%E0%AE%B4%E0%AE%B2%E0%AF%88%E0%AE%AF%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம் (PDF)</a>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <div class="doc-icon">🧒</div>
+                <div class="doc-info">
+                    <span class="doc-name">சிறுவர் பிரிவு</span>
+                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735338_2-%E0%AE%9A%E0%AE%BF%E0%AE%B1%E0%AF%81%E0%AE%B5%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம் (PDF)</a>
                 </div>
             </div>
 
             <div class="doc-card">
                 <div class="doc-icon">📚</div>
                 <div class="doc-info">
-                    <span class="doc-name">சிறுவர் பிரிவு</span>
-                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735338_2-%E0%AE%9A%E0%AE%BF%E0%AE%B1%E0%AF%81%E0%AE%B5%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம்</a>
+                    <span class="doc-name">கீழ்ப்பிரிவு</span>
+                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735342_3-%E0%AE%95%E0%AF%80%E0%AE%B4%E0%AF%8D%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம் (PDF)</a>
                 </div>
             </div>
 
-          <div class="doc-card">
+            <div class="doc-card">
                 <div class="doc-icon">📚</div>
                 <div class="doc-info">
-                     <span class="doc-name">கீழ்ப்பிரிவு</span>
-                     <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735342_3-%E0%AE%95%E0%AF%80%E0%AE%B4%E0%AF%8D%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம்</a>
+                    <span class="doc-name">நடுவண் பிரிவு</span>
+                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735363_4-%E0%AE%A8%E0%AE%9F%E0%AF%81%E0%AE%B5%E0%AE%A3%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம் (PDF)</a>
                 </div>
-             </div>
-
-          <div class="doc-card">
-                <div class="doc-icon">📚</div>
-                <div class="doc-info">
-                     <span class="doc-name">நடுவண் பிரிவு</span>
-                     <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735363_4-%E0%AE%A8%E0%AE%9F%E0%AF%81%E0%AE%B5%E0%AE%A3%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம்</a>
-                </div>
-             </div>
-
-          <div class="doc-card">
-                <div class="doc-icon">📚</div>
-                <div class="doc-info">
-                     <span class="doc-name">மீநடுவண் பிரிவு</span>
-                     <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735363_5-%E0%AE%AE%E0%AF%80%E0%AE%A8%E0%AE%9F%E0%AF%81%E0%AE%B5%E0%AE%A3%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம்</a>
-                </div>
-             </div> 
-
-          <div class="doc-card">
-                <div class="doc-icon">📚</div>
-                <div class="doc-info">
-                     <span class="doc-name">மேற் பிரிவு/span>
-                     <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735363_6-%E0%AE%AE%E0%AF%87%E0%AE%B1%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம்</a>
-                </div>
-             </div>  
-
-          <div class="doc-card">
-                <div class="doc-icon">📚</div>
-                <div class="doc-info">
-                     <span class="doc-name">மீமேற் பிரிவு</span>
-                     <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735402_7-%E0%AE%AE%E0%AF%80%E0%AE%AE%E0%AF%87%E0%AE%B1%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம்</a>
-                </div>
-             </div>  
-
-          <div class="doc-card">
-                <div class="doc-icon">📚</div>
-                <div class="doc-info">
-                     <span class="doc-name">உயர் பிரிவு</span>
-                     <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735402_8-%E0%AE%89%E0%AE%AF%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம்</a>
-                </div>
-             </div>  
-
-           <div class="doc-card">
-                <div class="doc-icon">📚</div>
-                <div class="doc-info">
-                     <span class="doc-name">மீயுயர் பிரிவு</span>
-                     <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735402_9-%20%E0%AE%AE%E0%AF%80%E0%AE%AF%E0%AF%81%E0%AE%AF%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம்</a>
-                </div>
-             </div>            
-
             </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="events.html" style="color: var(--rouge-sombre); font-weight: bold;">➔ மீண்டும் நிகழ்வுகள் பக்கத்திற்குச் செல்ல</a>
+            <div class="doc-card">
+                <div class="doc-icon">📖</div>
+                <div class="doc-info">
+                    <span class="doc-name">மீநடுவண் பிரிவு</span>
+                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735363_5-%E0%AE%AE%E0%AF%80%E0%AE%A8%E0%AE%9F%E0%AF%81%E0%AE%B5%E0%AE%A3%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம் (PDF)</a>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <div class="doc-icon">📖</div>
+                <div class="doc-info">
+                    <span class="doc-name">மேற் பிரிவு</span>
+                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735363_6-%E0%AE%AE%E0%AF%87%E0%AE%B1%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம் (PDF)</a>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <div class="doc-icon">🎓</div>
+                <div class="doc-info">
+                    <span class="doc-name">மீமேற் பிரிவு</span>
+                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735402_7-%E0%AE%AE%E0%AF%80%E0%AE%AE%E0%AF%87%E0%AE%B1%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம் (PDF)</a>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <div class="doc-icon">🎓</div>
+                <div class="doc-info">
+                    <span class="doc-name">உயர் பிரிவு</span>
+                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735402_8-%E0%AE%89%E0%AE%AF%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம் (PDF)</a>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <div class="doc-icon">🏛️</div>
+                <div class="doc-info">
+                    <span class="doc-name">மீயுயர் பிரிவு</span>
+                    <a href="https://www.tamoulcholai.fr/admin-page/uploads/gallery/3/1770735402_9-%20%E0%AE%AE%E0%AF%80%E0%AE%AF%E0%AF%81%E0%AE%AF%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%BF%E0%AE%B5%E0%AF%81.pdf" class="doc-btn" download>பதிவிறக்கம் (PDF)</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center;">
+            <a href="events.html" class="back-link">➔ மீண்டும் நிகழ்வுகள் பக்கத்திற்குச் செல்ல</a>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 தமிழ் சோலை - பிரான்சு</p>
+        <p>© 2026 தமிழ் சோலை - பிரான்சு | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை</p>
     </footer>
 
 </body>
