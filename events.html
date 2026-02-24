@@ -3,198 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>நிகழ்வுகள் | தமிழ் சோலை</title>
+    <title>எம்மைப்பற்றி | தமிழ் சோலை</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --vert-sombre: #158209;
+            --bleu-titre: #2b59ff;
             --rouge-sombre: #800000;
             --jaune-or: #ffcc00;
-            --gris-clair: #f4f4f4;
-            --blanc: #ffffff;
+            --vert-fond-image: #e9f5e9;
+            --gris-texte: #444;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Noto Sans Tamil', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--gris-clair);
+            background-color: #ffffff;
+            line-height: 1.6;
+            color: var(--gris-texte);
         }
 
-        /* En-tête */
-        .top-bar {
+        /* --- HEADER & NAV --- */
+        header {
             background-color: var(--rouge-sombre);
-            color: var(--blanc);
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 6px solid var(--jaune-or);
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        nav a {
             color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            background-color: var(--jaune-or);
-            color: black;
-        }
-
-        /* Contenu */
-        .main-content {
-            max-width: 1000px;
-            margin: 30px auto;
             padding: 20px;
-        }
-
-        .page-title {
             text-align: center;
-            color: var(--rouge-sombre);
-            margin-bottom: 40px;
+            border-bottom: 5px solid var(--jaune-or);
         }
 
-        /* Liste des événements */
-        .event-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        header h1 {
+            margin: 0;
+            font-family: 'Arima Madurai', cursive;
         }
 
-        .event-card {
+        /* --- CONTENEUR PRINCIPAL --- */
+        .main-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* --- SECTION IMAGE ET PRÉSENTATION (Style image_ba5f39) --- */
+        .intro-section {
             display: flex;
-            background: var(--blanc);
-            border-radius: 8px;
+            background-color: var(--vert-fond-image);
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border-left: 8px solid var(--vert-sombre);
+            margin-bottom: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .event-date {
-            background-color: var(--vert-sombre);
-            color: white;
-            padding: 20px;
-            min-width: 100px;
-            text-align: center;
+        .intro-image {
+            flex: 0 0 400px; /* Largeur fixe pour l'image carrée */
+            height: 400px;
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .intro-text {
+            flex: 1;
+            padding: 35px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            align-items: center;
+            font-size: 1.05em;
+            text-align: justify;
         }
 
-        .event-date .day { font-size: 1.8em; font-weight: bold; }
-        .event-date .month { font-size: 0.9em; text-transform: uppercase; }
-
-        .event-info {
-            padding: 20px;
-            flex-grow: 1;
+        /* --- SECTION ARTICLE (Style image_50d1e1) --- */
+        .article-section h2 {
+            color: var(--bleu-titre);
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
         }
 
-        .event-info h3 {
-            margin: 0 0 10px 0;
-            color: var(--rouge-sombre);
+        .sub-section {
+            margin-bottom: 30px;
         }
 
-        .event-status {
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            background-color: #e8f5e9;
-            color: #2e7d32;
+        .sub-title {
             font-weight: bold;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
         }
 
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
+        .article-content {
+            padding-left: 5px;
+            margin-bottom: 20px;
         }
 
-        /* Mobile */
-        @media (max-width: 600px) {
-            .event-card { flex-direction: column; }
-            .event-date { flex-direction: row; gap: 10px; min-width: auto; padding: 10px; }
+        /* Style des listes à puces avec puces colorées */
+        .custom-list {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .custom-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        .custom-list li::before {
+            content: "•";
+            color: var(--rouge-sombre);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+            font-size: 1.3em;
+            vertical-align: middle;
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 850px) {
+            .intro-section { flex-direction: column; }
+            .intro-image { flex: none; width: 100%; height: 250px; }
+            .article-section h2 { font-size: 1.5em; }
         }
     </style>
 </head>
 <body>
 
-    <header class="top-bar">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Logo" style="height: 100px; width: auto; border-radius: 50%; background: white; padding: 5px;">
-            
-            <div style="text-align: left;">
-                <h1 style="margin: 0;">தமிழ் சோலை</h1>
-                <p style="margin: 0;">தமிழ் மொழி, கலை மற்றும் பண்பாட்டுத் தளம்</p>
-            </div>
-        </div>
+    <header>
+        <h1>தமிழ் சோலை</h1>
     </header>
 
-    <nav>
-        <a href="index.html">முகப்பு</a>
-        <a href="Aboutus.html">எம்மைப்பற்றி</a>
-        <a href="events.html" class="active">நிகழ்வுகள்</a>
-        <a href="activities.html">செயற்பாடுகள்</a>
-        <a href="files.html">கோப்புகள்</a>
-    </nav>
+    <div class="main-container">
 
-    <div class="main-content">
-        <h2 class="page-title">எதிர்வரும் நிகழ்வுகள்</h2>
+        <div class="intro-section">
+            <div class="intro-image">
+                <img src="https://www.tamoulcholai.fr/uploads/sections/sec_1770734669.png" alt="Presentation">
+         <div class="article-section">
+            <h2>திருக்குறள் திறன் போட்டி: நோக்கமும் நிறைவும்</h2>
 
-        <div class="event-list">
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="day">15</span>
-                    <span class="month">ஏப்ரல்</span>
-                </div>
-                <div class="event-info">
-                    <span class="event-status">தயார் நிலை</span>
-                    <h3>தமிழ் மொழித் தேர்வுகள்</h3>
-                    <p>வருடாந்த இறுதித் தேர்வுகள் பிரான்சு முழுவதும் உள்ள கிளைகளில் நடைபெறும்.</p>
+            <div class="sub-section">
+                <div class="sub-title">🌍 உலகப் பொதுமறை</div>
+                <div class="article-content">
+                    இனம், மொழி, மதம், நாடு என எக்கட்டுக்குள்ளும் அடங்கிடாத உலகப் பொதுமறையாய் பலநூறு ஆண்டுகள் கடந்தும் நிலைத்திருக்கும் வியத்தகு புதையலே எம் திருக்குறள்.
                 </div>
             </div>
 
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="day">22</span>
-                    <span class="month">மே</span>
-                </div>
-                <div class="event-info">
-                    <span class="event-status">வரவிருக்கிறது</span>
-                    <h3>கலை விழா 2026</h3>
-                    <p>மாணவர்களின் ஆடல், பாடல் மற்றும் நாடகத் திறமைகளை வெளிப்படுத்தும் ஒரு கலை மாலை.</p>
+            <div class="sub-section">
+                <div class="sub-title">🎯 போட்டியின் முதன்மை நோக்கங்கள்</div>
+                <div class="article-content">
+                    தமிழ்ச்சோலைத் தலைமைப் பணியகத்தினால் உருவாக்கப்பட்ட இப்போட்டியின் அடிப்படை நோக்கங்கள் பின்வருமாறு:
+                    <ul class="custom-list">
+                        <li><strong>அறமும் அறிவியலும்:</strong> புலம்பெயர் மாணவரிடத்தே தமிழரின் அறத்தையும் அறிவியலையும் கொண்டு செல்லுதல்.</li>
+                        <li><strong>இலக்கியச் செரிவு:</strong> தமிழ் இலக்கியத்தின் ஆழத்தையும், அரசியல் தெளிவையும் இளைய தலைமுறைக்கு உணரவைத்தல்.</li>
+                        <li><strong>பரிணாம வளர்ச்சி:</strong> வெறும் மனனத்துடன் (Memory) சுருக்கிவிடாது, குறள் சார்ந்த அறிவுத்திறனை ஊட்டுதல்.</li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="event-card" style="border-left-color: #757575;">
-                <div class="event-date" style="background-color: #757575;">
-                    <span class="day">14</span>
-                    <span class="month">ஜன</span>
-                </div>
-                <div class="event-info">
-                    <span class="event-status" style="background-color: #f5f5f5; color: #757575;">முடிவடைந்தது</span>
-                    <h3>தைப்பொங்கல் விழா</h3>
-                    <p>பாரம்பரிய முறைப்படி பொங்கல் வைத்து வழிபாடு செய்தல் மற்றும் விளையாட்டுப் போட்டிகள்.</p>
+            
+             <div class="sub-section">
+                <div class="sub-title">🏆 போட்டி அமைப்பு முறை</div>
+                <div class="article-content">
+                    இப்போட்டியானது ஒன்பது அகவைப் பிரிவுகளுடன், மூன்று முக்கிய கட்டங்களாக வடிவமைக்கப்பட்டுள்ளது:
+                    <ul class="custom-list">
+                        <li><strong>தமிழ்ச்சோலை மட்டம்</strong></li>
+                        <li><strong>திணைக்கள மட்டம்</strong></li>
+                        <li><strong>இறுதிப் போட்டி</strong></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
+    <footer style="background: #222; color: white; text-align: center; padding: 20px; margin-top: 40px;">
         <p>© 2026 தமிழ் சோலை - பிரான்சு</p>
     </footer>
 
