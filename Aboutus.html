@@ -1,282 +1,104 @@
 <!DOCTYPE html>
 <html lang="ta">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>எம்மைப்பற்றி | தமிழ் சோலை</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --vert-sombre: #158209;
-            --rouge-sombre: #800000;
-            --jaune-or: #ffcc00;
-            --gris-clair: #f4f4f4;
-            --blanc: #ffffff;
-        }
-
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: var(--gris-clair);
-            color: #333;
         }
 
-        /* En-tête */
-        .top-bar {
-            background-color: var(--rouge-sombre);
-            color: var(--blanc);
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 6px solid var(--jaune-or);
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        /* Conteneur principal qui centre le bloc sur la page */
+        .container {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            background-color: var(--jaune-or);
-            color: black;
-        }
-
-        /* Contenu */
-        .main-content {
-            max-width: 900px;
-            margin: 30px auto;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
         }
 
-        .content-card {
-            background: var(--blanc);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            line-height: 1.8;
-        }
-
-        h2 {
-            color: var(--vert-sombre);
-            border-bottom: 2px solid var(--jaune-or);
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .mission-box {
-            background-color: #fff9e6;
-            border: 1px dashed var(--rouge-sombre);
-            padding: 20px;
-            margin-top: 30px;
-            border-radius: 5px;
-        }
-
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
-        /* Style pour tout le texte tamoul */
-body {
-    font-family: 'Noto Sans Tamil', sans-serif;
-}
-
-/* Style spécifique pour les titres (plus artistique) */
-h1, h2, h3 {
-    font-family: 'Arima Madurai', cursive;
-    font-weight: 700;
-    color: #800000;
-    letter-spacing: 1px; /* Espace entre les lettres */
-}
-
-/* Style pour le texte dans le carré vert */
-.text-section p {
-    font-size: 18px; /* Taille plus grande pour la lisibilité */
-    line-height: 2;   /* Plus d'espace entre les lignes */
-    font-weight: 400;
-    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.1); /* Légère ombre pour le relief */
-}
-/* 5. STYLE DU FOOTER CORRIGÉ */
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 25px 0;
+        /* Le bloc de style "Photo" */
+        .content-box {
+            display: flex;
+            background-color: #e9f5e9; /* Fond vert pâle exact de l'image */
+            max-width: 1200px;
             width: 100%;
-            font-size: 0.9em;
-            border-top: 4px solid #ffcc00; /* Touche de jaune comme le site original */
-        }  
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            align-items: stretch; /* L'image et le texte auront la même hauteur */
+        }
+
+        /* Section Image (Carrée à gauche) */
+        .image-side {
+            flex: 0 0 450px; /* Largeur fixe pour l'image comme sur la photo */
+            height: 450px;   /* Hauteur fixe pour faire un carré */
+        }
+
+        .image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Remplit le carré sans déformer */
+            display: block;
+        }
+
+        /* Section Texte (À droite) */
+        .text-side {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            align-items: center; /* Centre le texte verticalement par rapport à l'image */
+        }
+
+        .text-side p {
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Adaptation pour mobile */
+        @media (max-width: 900px) {
+            .content-box {
+                flex-direction: column;
+            }
+            .image-side {
+                flex: none;
+                width: 100%;
+                height: 300px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <header class="top-bar">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Logo" style="height: 100px; width: auto; border-radius: 50%; background: white; padding: 5px;">
-            
-            <div style="text-align: left;">
-                <h1 style="margin: 0;">தமிழ் சோலை</h1>
-                <p style="margin: 0;">தமிழ் மொழி, கலை மற்றும் பண்பாட்டுத் தளம்</p>
+    <div class="container">
+        <div class="content-box">
+            <div class="image-side">
+                <img src="images/ba5f39.jpg" alt="Sunset">
+            </div>
+
+            <div class="text-side">
+                <p>
+                    தமிழர் கல்வி மேம்பாட்டுப் பேரவை பிரான்சில் 2004 இல் தோற்றுவிக்கப்பட்டது. 
+                    எமது ஈழத்தாயகத்தில் பல்வேறு நெருக்கடிகளுக்கு ஆளாகி அங்கு வாழமுடியாத 
+                    சூழ்நிலையில் தமிழ் மக்கள் புலம்பெயர்ந்து உலகின் பல நாடுகளில் வாழ்ந்து வருகின்றனர். 
+                    புலம்பெயர்ந்து வாழும் சூழலில் தமிழ்த் தலைமுறையினரின் வாழ்வியல் முறை 
+                    சிதைந்துவிடாமல் அவர்கள் தம் இன அடையாளத்தைக் காக்கும் பொருட்டும் 
+                    உலகம் முழுவதும் சிதறிக் கிடக்கின்ற எமது புலம் பெயர் தமிழ் இனத்தை மொழி மூலம் 
+                    ஒரு குடையின் கீழ் ஒன்றிணைக்க முடியும் என்கின்ற நல்லெண்ணத்தோடும் 
+                    நிறுவப்பட்டதே தமிழர் கல்வி மேம்பாட்டுப் பேரவை. 
+                    மொழி என்பது வெறுமனே தொடர்பாடற் கருவி மட்டுமல்ல எமது இனத்தின் அடையாளம், 
+                    கலை இலக்கிய, பண்பாட்டு விழுமியம். மொழி இன்றேல் இனமில்லை என்பதை அறிந்து 
+                    புலம்பெயர்ந்து வாழும் எம் தமிழ்த்தலைமுறையினர் தாய் மொழியறியாமல் 
+                    வீழ்ந்து விடக்கூடாது என்ற உயரிய நோக்குடன் 14 நாடுகளை ஒன்றாக.
+                </p>
             </div>
         </div>
-    </header>
-
-    <nav>
-        <a href="index.html">முகப்பு</a>
-        <a href="Aboutus.html" class="active">எம்மைப்பற்றி</a>
-        <a href="events.html">நிகழ்வுகள்</a>
-        <a href="activities.html">செயற்பாடுகள்</a>
-        <a href="files.html">கோப்புகள்</a>
-    </nav>
-<div class="page-wrapper">
-    <h2 class="top-word">தோற்றம்</h2>
-  <div class="main-box">
-    <div class="content-wrapper">
-        <div class="image-section">
-            <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/sunrise-compressed.jpg" alt="Description">
-        </div>
-
-        <div class="text-section">
-            <p>
-                தமிழர் கல்வி மேம்பாட்டுப் பேரவை பிரான்சில் 2004 இல் தோற்றுவிக்கப்பட்டது. 
-                எமது ஈழத்தாயகத்தில் பல்வேறு நெருக்கடிகளுக்கு ஆளாகி அங்கு வாழமுடியாத 
-                சூழ்நிலையில் தமிழ் மக்கள் புலம்பெயர்ந்து உலகின் பல நாடுகளில் வாழ்ந்து வருகின்றனர். 
-                புலம்பெயர்ந்து வாழும் சூழலில் தமிழ்த் தலைமுறையினரின் வாழ்வியல் முறை 
-                சிதைந்துவிடாமல் அவர்கள் தம் இன அடையாளத்தைக் காக்கும் பொருட்டும் 
-                உலகம் முழுவதும் சிதறிக் கிடக்கின்ற எமது புலம் பெயர் தமிழ் இனத்தை மொழி மூலம் 
-                ஒரு குடையின் கீழ் ஒன்றிணைக்க முடியும் என்கின்ற நல்லெண்ணத்தோடும் 
-                நிறுவப்பட்டதே தமிழர் கல்வி மேம்பாட்டுப் பேரவை. 
-                மொழி என்பது வெறுமனே தொடர்பாடற் கருவி மட்டுமல்ல எமது இனத்தின் அடையாளம், 
-                கலை இலக்கிய, பண்பாட்டு விழுமியம். மொழி இன்றேல் இனமில்லை என்பதை அறிந்து 
-                புலம்பெயர்ந்து வாழும் எம் தமிழ்த்தலைமுறையினர் தாய் மொழியறியாமல் 
-                வீழ்ந்து விடக்கூடாது என்ற உயரிய நோக்குடன் 14 நாடுகளை ஒன்றாக இணைத்துப் 
-                பயணிக்கத் தொடங்கியதுதான் தமிழர் கல்வி மேம்பாட்டுப் பேரவை.
-            </p>
-        </div>
     </div>
-</div>
-    
-<div class="page-wrapper">
-    <h2 class="top-word">நோக்கம்</h2>
-  <div class="main-box">
-    <div class="content-wrapper">
-        <div class="image-section">
-            <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/vaagai_maram.jpg" alt="Description">
-        </div>
-
-        <div class="text-section">
-            <p>
-                உலகின் பவ்வேறு நாடுகளில் வாழ்கின்ற இளந் தமிழ்த் தலைமுறையினர் வாழிட நாட்டு மொழியைக் கற்றுக் கொள்வது பேசுவது அவரவர் வாழ்வியலுக்கு இன்றியமையாதது. தமிழ்த் தலைமுறையினரும் அந்தந்த நாட்டு மொழியைக் கற்று வாழிட நாட்டு கல்வியில் கல்விமான்களாக விளங்குவது எம் இனத்தின் தேவைகளில் ஒன்றாகும். அதேவேளை எம் இளந் தலைமுறையினர் தாய்த்தமிழை மறந்து விடாது தன் அடையாளத்துடன் வாழவேண்டும்.
-
-இந்த நிலையில் தமிழ்த் தலைமுறையினருக்கு தாய்த் தமிழைக் கற்பித்தலை முதன்மை நோக்கமாகக் கொண்டு தமிழர் கல்வி மேம்பாட்டுப் பேரவை செயற்படுகின்றது.
-
-தொன்மையான செம்மொழியாகிய எம் தாய்மொழியை எமது இளந்தலைமுறைக்கு ஊட்டுவதன் ஊடாகத் தமிழ்மொழியைக் காத்து வளர்ப்பதையும் கல்விப் பேரவை நோக்கமாகக் கொண்டுள்ளது.
-
-மேலும் தமிழ் இன வரலாறு, கலை, பண்பாடு முதலானவற்றைத் தாய்மொழிக் கல்வி ஊடாக இளைய தலைமுறையினர் அறியச் செய்வதும் தமிழர் கல்வி மேம்பாட்டுப் பேரவையின் நோக்கமாகும்.
-
-வாழிட நாட்டு வரலாற்றையும் பண்பாட்டையும் அறிந்து அந்தந்த நாட்டின் ஒழுங்குகள் சட்டதிட்டங்களை மதித்து அந்த இன மக்களோடு ஒன்றி வாழத்தக்க நிலையை உருவாக்குதல்.
-
-தாய்நாட்டுக்கும் வாழிட நாட்டுக்கும் பயன் தரத்தக்க வளமான குமுகாயத்தை உருவாக்குதல்.
-
-வளர் தமிழ்ப் பாடநூல்களின் தெளிவான விரிவாக்கத்தை உள்ளடக்கிய அறிவை வழங்குதல்.
-
-எம் இனத்தின் மொழி பண்பாட்டு விழுமியங்களை ஒரே தன்மைத்தான சமச்சீர்க் கல்வி மூலம் பரப்புதல்.
-
-இயன்றவரை நற்றமிழில் கற்றல் – கற்பித்தல்.
-            </p>
-        </div>
-    </div>
-</div>
-
-<style>
-    /* Zone de centrage */
-    .content-area {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    }
-
-    .top-word {
-        font-family: 'Arima Madurai', cursive;
-        color: #800000;
-        font-size: 2em;
-        margin-bottom: 15px;
-    }
-
-    /* LE CARRÉ PARFAIT */
-    .main-box {
-        width: 600px;  /* Largeur fixe */
-        height: 600px; /* Hauteur identique à la largeur */
-        background-color: white;
-        border: 1px solid #ddd;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        border-radius: 12px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column; /* On empile l'image et le texte verticalement pour garder le carré */
-    }
-
-    .content-wrapper {
-        display: flex;
-        flex-direction: column; /* Changement ici : vertical pour respecter les dimensions */
-        height: 100%;
-        background-color: #e9f5e9;
-    }
-
-    /* Image : prend exactement la moitié de la hauteur */
-    .image-section {
-        height: 50%; 
-        width: 100%;
-    }
-
-    .image-section img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* L'image ne sera pas déformée */
-        display: block;
-    }
-
-    /* Texte : prend l'autre moitié de la hauteur */
-    .text-section {
-        height: 50%;
-        padding: 25px;
-        box-sizing: border-box; /* Pour que le padding ne dépasse pas des 600px */
-        overflow-y: auto; /* Ajoute une barre de défilement si le texte est trop long */
-        font-size: 0.95em;
-        line-height: 1.6;
-        text-align: justify;
-    }
-
-    /* Adaptation Mobile */
-    @media (max-width: 650px) {
-        .main-box {
-            width: 90vw;
-            height: 90vw; /* Reste carré sur mobile selon la largeur de l'écran */
-        }
-    }
-</style>
-    <footer>
-        <p>© 2026 தமிழ் சோலை - பிரான்சு</p>
-    </footer>
 
 </body>
 </html>
