@@ -8,288 +8,122 @@
     
     <style>
        :root {
-    --primary-color: #800000; /* Bordeaux */
-    --accent-color: #ffcc00;  /* Or */
-    --dark-bg: #1a1a1a;
-    --nav-glass: rgba(255, 255, 255, 0.95);
+    --primary: #800000;    /* Bordeaux */
+    --accent: #ffcc00;     /* Or */
+    --secondary: #2b59ff;  /* Bleu */
+    --bg-light: #f8f9fa;   /* Gris très clair */
+    --text-dark: #2d3436;
+    --white: #ffffff;
 }
 
-/* --- Style du Header --- */
+body {
+    font-family: 'Noto Sans Tamil', sans-serif;
+    margin: 0;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+/* --- HEADER UNIFIÉ --- */
 .main-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #4a0000 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, #4a0000 100%);
     color: white;
     padding: 30px 20px;
-    border-bottom: 5px solid var(--accent-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.header-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    text-align: center;
+    border-bottom: 5px solid var(--accent);
 }
 
 .header-logo {
-    height: 100px;
-    width: auto;
+    height: 90px;
     border-radius: 50%;
     background: white;
     padding: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
 }
 
-.header-logo:hover {
-    transform: rotate(5deg) scale(1.05);
-}
-
-.brand-text h1 {
+.main-header h1 {
     margin: 0;
     font-family: 'Arima Madurai', cursive;
-    font-size: 2.8em;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 2.5em;
 }
 
-.brand-text p {
-    margin: 5px 0 0 0;
-    font-size: 1.1em;
-    opacity: 0.9;
-    font-weight: 300;
-}
-
-/* --- Style de la Navigation --- */
+/* --- NAVIGATION --- */
 .main-nav {
-    background: var(--nav-glass);
-    backdrop-filter: blur(10px);
+    background: white;
+    display: flex;
+    justify-content: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 5px 0;
-}
-
-.nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 .main-nav a {
     color: #333;
+    padding: 15px 20px;
     text-decoration: none;
-    padding: 15px 25px;
     font-weight: 700;
-    font-size: 1.05em;
-    transition: all 0.3s ease;
-    border-bottom: 3px solid transparent;
+    transition: 0.3s;
 }
 
-.main-nav a:hover {
-    color: var(--primary-color);
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary);
     background: rgba(128, 0, 0, 0.05);
+    border-bottom: 3px solid var(--primary);
 }
 
-/* Classe à ajouter manuellement sur le lien de la page actuelle */
-.main-nav a.active {
-    color: var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
+/* --- FOOTER --- */
+footer {
+    background: #1a1a1a;
+    color: #b2bec3;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+        .article-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
 }
 
-/* --- Responsive Mobile --- */
-@media (max-width: 768px) {
-    .brand-text { text-align: center; }
-    .brand-text h1 { font-size: 2em; }
-    .main-nav a { padding: 10px 15px; font-size: 0.9em; }
+.main-title {
+    color: var(--secondary);
+    font-size: 2em;
+    border-left: 5px solid var(--accent);
+    padding-left: 15px;
 }
 
-        nav a {
-            color: #333;
-            padding: 12px 25px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 8px;
-            margin: 0 5px;
-            transition: all 0.3s ease;
-        }
+.bullet-list {
+    list-style: none;
+    padding: 0;
+}
 
-        nav a:hover, nav a.active {
-            background-color: var(--primary);
-            color: white;
-        }
+.bullet-list li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
+.bullet-list li::before {
+    content: "●";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
 
-        /* --- MODERN INTRO BOX --- */
-        .intro-box {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            margin-bottom: 60px;
-        }
-
-        .intro-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .intro-text {
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            font-size: 1.1em;
-            background: linear-gradient(to right, #ffffff, #fdfdfd);
-        }
-
-        /* --- ARTICLE SECTIONS --- */
-        .article-section {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-        }
-
-        .main-title {
-            color: var(--primary);
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            text-align: center;
-            position: relative;
-        }
-
-        .main-title::after {
-            content: "";
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin: 10px auto;
-            border-radius: 2px;
-        }
-
-        .sub-title {
-            color: var(--secondary);
-            font-size: 1.4em;
-            font-weight: 700;
-            margin-top: 30px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* --- MODERN EVENT/DOC CARD --- */
-        .document-box {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            border-left: 0;
-            transition: transform 0.3s ease;
-        }
-
-        .document-box:hover {
-            transform: translateY(-5px);
-        }
-
-        .event-image {
-            height: 100%;
-        }
-
-        .event-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .event-details {
-            padding: 40px;
-        }
-
-        .event-date {
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-            font-size: 0.8em;
-            margin-bottom: 10px;
-        }
-
-        .download-link-btn {
-            display: inline-block;
-            margin-top: 25px;
-            background: linear-gradient(135deg, var(--secondary) 0%, #1a3ebb 100%);
-            color: white;
-            text-decoration: none;
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-weight: 700;
-            box-shadow: 0 10px 20px rgba(43, 89, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .download-link-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 25px rgba(43, 89, 255, 0.3);
-        }
-
-        /* Lists */
-        .bullet-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .bullet-list li {
-            padding: 10px 0 10px 30px;
-            position: relative;
-        }
-
-        .bullet-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-            font-weight: bold;
-        }
-
-        footer {
-            background: #1a1a1a;
-            color: #777;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
-        }
-
-        /* Responsive */
-        @media (max-width: 850px) {
-            .intro-box, .document-box {
-                grid-template-columns: 1fr;
-            }
-            .intro-image, .event-image {
-                height: 200px;
-            }
-        }
+/* Le petit bouton pour aller aux fichiers */
+.btn-files {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
     </style>
 </head>
 <body>
